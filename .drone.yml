@@ -1,0 +1,23 @@
+---
+kind: pipeline
+type: docker
+name: default
+steps:
+- name: build-docker
+  image: plugins/kaniko
+  settings:
+    registry: r.sacovo.ch
+    repo: r.sacovo.ch/sandro.covo/nginx-pagespeed
+    cache: true
+    auto_tag: true
+    cache-repo: r.sacovo.ch/sandro.covo/nginx-pagespeed
+    username: 
+          from_secret: portus_username
+    password: 
+          from_secret: portus_token
+    cache_from: r.sacovo.ch/sandro.covo/nginx-pagespeed
+---
+kind: signature
+hmac: 1531ae4502a2e920617e9390e4a7a9800ce25ce7ba5978e7315fd7b28c10dad7
+
+...
