@@ -1,10 +1,10 @@
-FROM debian:buster-slim
+FROM debian:stable-slim
 
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install sudo curl -y
 
 COPY install.sh .
-RUN bash ./install.sh --nginx-version latest -y
+RUN bash ./install.sh --nginx-version 1.22.0 -y
 
 
 EXPOSE 80

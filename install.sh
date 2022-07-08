@@ -16,8 +16,6 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# Modified: 2022-06-15
-
 function usage() {
   echo "
 Usage: build_ngx_pagespeed.sh [options]
